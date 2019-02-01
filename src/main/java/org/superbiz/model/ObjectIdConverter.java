@@ -14,17 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.persistence;
+package org.superbiz.model;
 
-import org.jnosql.artemis.Repository;
-import org.superbiz.model.Person;
+import org.bson.types.ObjectId;
+import org.jnosql.artemis.AttributeConverter;
 
-import java.util.List;
-import java.util.Optional;
+public class ObjectIdConverter implements AttributeConverter<String, ObjectId> {
 
-public interface PersonRepository extends Repository<Person, String> {
+    @Override
+    public ObjectId convertToDatabaseColumn(String attribute) {
+        if(attribute == null) {
+            return null;
+        }
+        return new ObjectId(attribute);
+    }
 
-    Optional<Person> findById(Long id);
-
-    List<Person> findAll();
+    @Override
+    public String convertToEntityAttribute(ObjectId dbData) {
+        if(dbData == null) {
+            return null;
+        }
+        return dbData.toString();
+    }
 }

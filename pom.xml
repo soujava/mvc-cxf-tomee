@@ -35,8 +35,8 @@
         <tomee.version>8.0.0-M2</tomee.version>
         <version.deltaspike>1.9.0</version.deltaspike>
         <version.ozark>1.0.0-m04</version.ozark>
-        <version.arquillian>1.1.13.Final</version.arquillian>
-        <version.graphene.webdriver>2.3.1</version.graphene.webdriver>
+        <jnosql.version>0.0.8-SNAPSHOT</jnosql.version>
+
     </properties>
 
     <build>
@@ -91,6 +91,18 @@
             <artifactId>javaee-api</artifactId>
             <version>8.0</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!--Eclipse JNoSQL-->
+        <dependency>
+            <groupId>org.jnosql.artemis</groupId>
+            <artifactId>artemis-document</artifactId>
+            <version>${jnosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jnosql.diana</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>${jnosql.version}</version>
         </dependency>
 
         <!-- MVC 1.0(JSR 371) -->

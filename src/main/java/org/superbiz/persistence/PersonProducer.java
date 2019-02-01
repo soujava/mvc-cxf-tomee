@@ -16,28 +16,31 @@
  */
 package org.superbiz.persistence;
 
+import org.jnosql.diana.api.Settings;
+import org.jnosql.diana.api.document.DocumentCollectionManager;
+import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
+import org.jnosql.diana.api.document.DocumentConfiguration;
+import org.jnosql.diana.mongodb.document.MongoDBDocumentConfiguration;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
 
 @ApplicationScoped
 public class PersonProducer {
 
-    @PersistenceUnit
-    private EntityManagerFactory emf;
+    private static final String DOCUMENT_COLLECTION = "people";
 
     @Produces
     @ApplicationScoped
-    public EntityManager createEntityManager() {
-        return emf.createEntityManager();
+    public DocumentCollectionManager getDocumentCollectionManager() {
+        DocumentConfiguration<?> configuration = new MongoDBDocumentConfiguration();
+        Settings settings = Settings.builder().put("mongodb-server-host-1", "localhost:27017").build();
+        DocumentCollectionManagerFactory managerFactory = configuration.get(settings);
+        return managerFactory.get(DOCUMENT_COLLECTION);
     }
 
-    public void closeEntityManager(@Disposes EntityManager manager) {
-        if (manager.isOpen()) {
-            manager.close();
-        }
+    public void close(@Disposes DocumentCollectionManager manager) {
+        manager.close();
     }
 }

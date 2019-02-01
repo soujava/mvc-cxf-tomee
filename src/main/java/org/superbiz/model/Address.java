@@ -16,24 +16,27 @@
  */
 package org.superbiz.model;
 
-import java.util.Objects;
+import org.jnosql.artemis.Column;
+import org.jnosql.artemis.Entity;
 
 import javax.mvc.binding.MvcBinding;
-import javax.persistence.Embeddable;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.FormParam;
+import java.util.Objects;
 
-@Embeddable
+@Entity
 public class Address {
 
     @FormParam("country")
     @NotEmpty(message = "can not be empty")
     @MvcBinding
+    @Column
     private String country;
 
     @FormParam("state")
     @NotEmpty(message = "can not be empty")
     @MvcBinding
+    @Column
     private String state;
 
     public String getCountry() {

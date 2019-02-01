@@ -16,15 +16,12 @@
  */
 package org.superbiz.model;
 
-import java.util.Objects;
+import org.jnosql.artemis.Column;
+import org.jnosql.artemis.Convert;
+import org.jnosql.artemis.Entity;
+import org.jnosql.artemis.Id;
 
 import javax.mvc.binding.MvcBinding;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -32,44 +29,48 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
+import java.util.Objects;
 
 @Entity
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @FormParam("id")
-    private Long id;
+    @Convert(ObjectIdConverter.class)
+    private String id;
 
     @FormParam("name")
     @NotEmpty(message = "can not be empty")
     @Size(min = 1, max = 20)
     @MvcBinding
+    @Column
     private String name;
 
     @FormParam("age")
     @MvcBinding
     @Min(18)
+    @Column
     private int age;
 
     @BeanParam
     @Valid
-    @Embedded
+    @Column
     private Address address;
 
     @FormParam("server")
     @NotNull
     @MvcBinding
+    @Column
     private String server;
 
     @FormParam("description")
-    @Column
     @NotEmpty(message = "can not be empty")
     @MvcBinding
-    @Size(min = 10, max = 20)
+    @Size(min = 10)
+    @Column
     private String description;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
