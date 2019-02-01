@@ -104,6 +104,11 @@
             <artifactId>mongodb-driver</artifactId>
             <version>${jnosql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jnosql.artemis</groupId>
+            <artifactId>artemis-configuration</artifactId>
+            <version>${jnosql.version}</version>
+        </dependency>
 
         <!-- MVC 1.0(JSR 371) -->
         <dependency>
