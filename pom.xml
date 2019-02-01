@@ -92,21 +92,6 @@
             <version>8.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.deltaspike.modules</groupId>
-            <artifactId>deltaspike-data-module-api</artifactId>
-            <version>${version.deltaspike}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.deltaspike.modules</groupId>
-            <artifactId>deltaspike-data-module-impl</artifactId>
-            <version>${version.deltaspike}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.deltaspike.cdictrl</groupId>
-            <artifactId>deltaspike-cdictrl-api</artifactId>
-            <version>${version.deltaspike}</version>
-        </dependency>
 
         <!-- MVC 1.0(JSR 371) -->
         <dependency>
