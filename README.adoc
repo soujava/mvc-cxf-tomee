@@ -4,7 +4,7 @@
 :jbake-status: published
 
 
-Simple example of using link:http://mvc-spec.org[http://mvc-spec.org] together with Deltaspike-Data to do CRUD operations.
+Simple example of using link:http://mvc-spec.org[http://mvc-spec.org] together with Eclipse JNoSQL to do CRUD operations.
 
 === Steps to run the example
 
