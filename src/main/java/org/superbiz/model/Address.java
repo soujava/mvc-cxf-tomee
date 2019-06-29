@@ -16,8 +16,9 @@
  */
 package org.superbiz.model;
 
-import org.jnosql.artemis.Column;
-import org.jnosql.artemis.Entity;
+
+import jakarta.nosql.mapping.Column;
+import jakarta.nosql.mapping.Entity;
 
 import javax.mvc.binding.MvcBinding;
 import javax.validation.constraints.NotEmpty;

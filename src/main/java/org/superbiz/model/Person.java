@@ -16,10 +16,10 @@
  */
 package org.superbiz.model;
 
-import org.jnosql.artemis.Column;
-import org.jnosql.artemis.Convert;
-import org.jnosql.artemis.Entity;
-import org.jnosql.artemis.Id;
+import jakarta.nosql.mapping.Column;
+import jakarta.nosql.mapping.Convert;
+import jakarta.nosql.mapping.Entity;
+import jakarta.nosql.mapping.Id;
 
 import javax.mvc.binding.MvcBinding;
 import javax.validation.Valid;

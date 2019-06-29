@@ -16,8 +16,8 @@
  */
 package org.superbiz.model;
 
+import jakarta.nosql.mapping.AttributeConverter;
 import org.bson.types.ObjectId;
-import org.jnosql.artemis.AttributeConverter;
 
 public class ObjectIdConverter implements AttributeConverter<String, ObjectId> {
 

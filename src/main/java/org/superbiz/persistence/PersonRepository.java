@@ -16,7 +16,7 @@
  */
 package org.superbiz.persistence;
 
-import org.jnosql.artemis.Repository;
+import jakarta.nosql.mapping.Repository;
 import org.superbiz.model.Person;
 
 import java.util.List;
