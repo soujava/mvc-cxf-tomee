@@ -8,13 +8,25 @@ Simple example of using link:http://mvc-spec.org[http://mvc-spec.org] together w
 
 === Steps to run the example
 
+==== Run MongoDB Using Docker
+
+image::https://www.docker.com/sites/default/files/horizontal_large.png[Docker,align="center"]
+
+1. Install docker: https://www.docker.com/
+1. https://store.docker.com/images/mongo
+1. Run docker command
+1. Run MongoDB: verify MongoDB image name with the command `docker images`, it can be mongodb or mongo, and then execute this command `docker run -d --name mongodb-instance -p 27017:27017 mongo`
+
+
+==== Run Application
+
 Build and start the demo:
 
-    mvn clean install tomee:run
+    `mvn clean install tomee:run`
 
 Open:
 
-    http://localhost:8080/mvc-cxf
+    `http://localhost:8080/mvc-cxf`
 
 ==== Intro of Eclipse Krazo
     
