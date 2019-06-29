@@ -14,12 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.persistence;
+package org.superbiz;
 
-import org.jnosql.artemis.ConfigurationUnit;
-import org.jnosql.diana.api.document.DocumentCollectionManager;
-import org.jnosql.diana.api.document.DocumentCollectionManagerFactory;
-import org.jnosql.diana.mongodb.document.MongoDBDocumentCollectionManager;
+import jakarta.nosql.document.DocumentCollectionManager;
+import jakarta.nosql.document.DocumentCollectionManagerFactory;
+import jakarta.nosql.mapping.ConfigurationUnit;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
@@ -33,7 +32,7 @@ public class PersonProducer {
 
     @Inject
     @ConfigurationUnit
-    private DocumentCollectionManagerFactory<MongoDBDocumentCollectionManager> managerFactory;
+    private DocumentCollectionManagerFactory managerFactory;
 
     @Produces
     @ApplicationScoped

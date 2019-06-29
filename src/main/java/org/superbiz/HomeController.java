@@ -14,17 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.persistence;
+package org.superbiz;
 
-import jakarta.nosql.mapping.Repository;
-import org.superbiz.model.Person;
+import javax.mvc.Controller;
+import javax.mvc.View;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
-import java.util.List;
-import java.util.Optional;
+@Controller
+@Path("home")
+public class HomeController {
 
-public interface PersonRepository extends Repository<Person, String> {
-
-    Optional<Person> findById(Long id);
-
-    List<Person> findAll();
+    @GET
+    @View("home.jsp")
+    public void homePage() {
+    }
 }

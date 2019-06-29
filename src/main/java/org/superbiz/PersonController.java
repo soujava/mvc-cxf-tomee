@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.controller;
+package org.superbiz;
 
 import static java.util.stream.Collectors.toList;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
@@ -42,10 +42,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 
 import org.mvcspec.ozark.engine.Viewable;
-import org.superbiz.model.Errors;
-import org.superbiz.model.Messages;
-import org.superbiz.model.Person;
-import org.superbiz.persistence.PersonRepository;
 
 @Controller
 @Path("mvc")

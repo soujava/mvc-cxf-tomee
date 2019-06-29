@@ -14,26 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.model;
+package org.superbiz;
 
-import java.io.Serializable;
+import jakarta.nosql.mapping.AttributeConverter;
+import org.bson.types.ObjectId;
 
-import javax.inject.Named;
-import javax.mvc.RedirectScoped;
+public class ObjectIdConverter implements AttributeConverter<String, ObjectId> {
 
-@Named("message")
-@RedirectScoped
-public class Messages implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-    private String messageRedirect;
-
-    public String getMessageRedirect() {
-        return messageRedirect;
+    @Override
+    public ObjectId convertToDatabaseColumn(String attribute) {
+        if(attribute == null) {
+            return null;
+        }
+        return new ObjectId(attribute);
     }
 
-    public void setMessageRedirect(String messageRedirect) {
-        this.messageRedirect = messageRedirect;
+    @Override
+    public String convertToEntityAttribute(ObjectId dbData) {
+        if(dbData == null) {
+            return null;
+        }
+        return dbData.toString();
     }
 }

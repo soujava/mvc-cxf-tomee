@@ -14,26 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.superbiz.model;
+package org.superbiz;
 
-import jakarta.nosql.mapping.AttributeConverter;
-import org.bson.types.ObjectId;
+import jakarta.nosql.mapping.Repository;
 
-public class ObjectIdConverter implements AttributeConverter<String, ObjectId> {
+import java.util.List;
+import java.util.Optional;
 
-    @Override
-    public ObjectId convertToDatabaseColumn(String attribute) {
-        if(attribute == null) {
-            return null;
-        }
-        return new ObjectId(attribute);
-    }
+public interface PersonRepository extends Repository<Person, String> {
 
-    @Override
-    public String convertToEntityAttribute(ObjectId dbData) {
-        if(dbData == null) {
-            return null;
-        }
-        return dbData.toString();
-    }
+    Optional<Person> findById(Long id);
+
+    List<Person> findAll();
 }
