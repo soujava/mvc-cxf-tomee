@@ -41,7 +41,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 
-import org.mvcspec.ozark.engine.Viewable;
+import org.eclipse.krazo.engine.Viewable;
+
 
 @Controller
 @Path("mvc")

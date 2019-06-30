@@ -29,6 +29,23 @@ Open:
 
     `http://localhost:8080/mvc-cxf`
 
+
+==== Run Application with Docker-Compose
+
+Build and start the demo:
+
+    ./run.sh
+
+OBS: 
+ - Install Docker & Docker-Compose
+ - edit run.sh with the your path of JDK and Maven
+ - edit nosql.json for change the `localhost` to `mongodb` 
+ - if necessary change in `docker-compose` the `volumes: - ./data/db:/data/db` for your other location.
+ 
+Open:
+
+    http://localhost:8080/mvc-cxf
+
 ==== Intro of Eclipse Krazo
     
 https://projects.eclipse.org/proposals/eclipse-krazo[Eclipse-Krazo] is an implementation of action-based MVC specifiec by MVC 1.0 (JSR-371). 
