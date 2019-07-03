@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - db
+
+  app:
+    container_name: mvc-tomee
+    restart: always
+    build: .
+    image: soujava/mvc-tomee:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+    networks:
+      - db
+ 
+networks:
+  db:
