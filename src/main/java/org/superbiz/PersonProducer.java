@@ -18,29 +18,27 @@ package org.superbiz;
 
 import jakarta.nosql.document.DocumentCollectionManager;
 import jakarta.nosql.document.DocumentCollectionManagerFactory;
-import jakarta.nosql.mapping.ConfigurationUnit;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 @ApplicationScoped
 public class PersonProducer {
 
-    private static final String DOCUMENT_COLLECTION = "people";
-
     @Inject
-    @ConfigurationUnit
-    private DocumentCollectionManagerFactory managerFactory;
+    @ConfigProperty(name = "document")
+    private DocumentCollectionManager manager;
 
     @Produces
-    @ApplicationScoped
-    public DocumentCollectionManager getDocumentCollectionManager() {
-        return managerFactory.get(DOCUMENT_COLLECTION);
+    public DocumentCollectionManager getManager() {
+        return manager;
     }
 
-    public void close(@Disposes DocumentCollectionManager manager) {
+    public void destroy(@Disposes DocumentCollectionManager manager) {
         manager.close();
     }
 }
