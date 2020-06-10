@@ -17,6 +17,8 @@ services:
     image: soujava/mvc-tomee:latest
     ports:
       - 8080:8080
+    environment:
+     JAVA_OPTS: "-Ddocument.settings.jakarta.nosql.host=mongodb:27017"
     depends_on:
       - mongodb
     networks:

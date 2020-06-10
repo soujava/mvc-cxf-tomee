@@ -42,7 +42,7 @@ OBS:
  
  - edit run.sh with the your path of JDK and Maven
  
- - edit nosql.json for change the `localhost` to `mongodb` 
+ - edit nosql.json for change the `localhost` to `mongodb` or change `JAVA_OPTS: "-Ddocument.settings.jakarta.nosql.host=mongodb:27017"` in docker-compose
  
  - if necessary change in `docker-compose` the `volumes: - ./data/db:/data/db` for your other location.
  
