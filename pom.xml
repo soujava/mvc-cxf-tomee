@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tomee.version>8.0.2</tomee.version>
+        <tomee.version>8.0.3</tomee.version>
         <version.krazo>1.1.0-M1</version.krazo>
         <jnosql.version>1.0.0-SNAPSHOT</jnosql.version>
 
