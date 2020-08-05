@@ -21,7 +21,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MVC 1.0 DEMO</title>
+<link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" />
+<title>Jakarta MVC 1.0 DEMO</title>
 </head>
 <body>
 
@@ -36,7 +37,9 @@
             </div>
         </c:if>
         <div class="row">
-            <a class="btn btn-primary" href="new">Add Registres</a>
+            <a class="btn btn-primary" href="new">
+                <span class="glyphicon glyphicon-plus"></span>
+                Add Registres</a>
             <hr />
             <table id="tableData"
                 class="table table-bordered table-hover">
@@ -60,10 +63,21 @@
                             <td>${person.address.country}</td>
                             <td>${person.address.state}</td>
                             <td>${person.server}</td>
-                            <td>${person.description}</td>
-                            <td><a href="update/${person.id}" class="btn btn-info">Edit</a></td>
-                            <td><a href="remove/${person.id}">
-                            <spanclass ="glyphiconglyphicon-trash"></span>Delete </a></td>
+                            <td>${person.description}</td> glyphicon glyphicon-edit
+                            <td>
+                                <a href="update/${person.id}" class="btn btn-info">
+                                    <span class="glyphicon glyphicon-edit"></span>
+                                      Edit</a>
+                            </td>
+                            <td>
+                               <form action="remove/${person.id}" method="post">
+                                  <input type="hidden" name="_method" value="DELETE"></input>
+                                  <button type="submit" class="btn btn-sm btn-danger">
+                                     <span class="glyphicon glyphicon-trash"></span>
+                                      Delete
+                                  </button>
+                               </form>
+                            </td>
                     </tr>
                     </c:forEach>
                 </tbody>

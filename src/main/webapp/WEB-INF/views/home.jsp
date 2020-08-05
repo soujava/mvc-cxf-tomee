@@ -20,15 +20,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MVC 1.0 DEMO</title>
+<link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" />
+<title>Jakarta MVC 1.0 DEMO</title>
 </head>
 <body>
     <jsp:include page="/templates/menu.jsp"></jsp:include>
 
-    <h1 align="center">Be welcome!</h1>
+    <h1 class="text-center">Be welcome!</h1>
 
-    <div align="center">
-        <img src="${pageContext.request.contextPath}/resources/images/tomee.png" class="img-responsive" />
+    <div class="text-center">
+        <img src="${pageContext.request.contextPath}/resources/images/jakaraMVC.png" class="img-responsive center-block" width="400" height="400"/>
     </div>
     <br/>
     <br/>

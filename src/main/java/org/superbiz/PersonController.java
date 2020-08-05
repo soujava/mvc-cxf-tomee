@@ -18,14 +18,12 @@ package org.superbiz;
 
 import static java.util.stream.Collectors.toList;
 import static javax.ws.rs.core.Response.Status.NOT_FOUND;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-
 import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
@@ -35,12 +33,13 @@ import javax.validation.Valid;
 import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
 import javax.ws.rs.BeanParam;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
-
 import org.eclipse.krazo.engine.Viewable;
 
 
@@ -69,12 +68,12 @@ public class PersonController {
     @Path("new")
     public Viewable newElement() {
         this.models.put("countries", getCountries());
-        return new Viewable("insert.jsp");
+        return new Viewable("insert");
     }
 
     @GET
     @Path("show")
-    @View("list.jsp")
+    @View("list")
     public void list() {
         this.models.put("list", repository.findAll());
     }
@@ -88,7 +87,7 @@ public class PersonController {
             this.getErros();
             this.models.put("countries", getCountries());
             this.models.put("person", person);
-            return "insert.jsp";
+            return "insert";
 
         }
         repository.save(person);
@@ -96,7 +95,7 @@ public class PersonController {
         return "redirect:mvc/show";
     }
 
-    @POST
+    @PUT
     @Path("update")
     @ValidateOnExecution(type = ExecutableType.NONE)
     public String update(@Valid @BeanParam Person person) {
@@ -105,7 +104,7 @@ public class PersonController {
             this.getErros();
             this.models.put("countries", getCountries());
             this.models.put("person", person);
-            return "change.jsp";
+            return "change";
 
         }
         repository.save(person);
@@ -123,7 +122,7 @@ public class PersonController {
         return new Viewable("change.jsp", models);
     }
 
-    @GET
+    @DELETE
     @Path("remove/{id}")
     public String delete(@PathParam("id") String id) {
         Optional<Person> person = repository.findById(id);

@@ -17,13 +17,12 @@
 package org.superbiz;
 
 
-import jakarta.nosql.mapping.Column;
-import jakarta.nosql.mapping.Entity;
-
+import java.util.Objects;
 import javax.mvc.binding.MvcBinding;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.FormParam;
-import java.util.Objects;
+import jakarta.nosql.mapping.Column;
+import jakarta.nosql.mapping.Entity;
 
 @Entity
 public class Address {
@@ -47,6 +46,14 @@ public class Address {
     public String getState() {
         return state;
     }
+
+   public void setCountry(String country) {
+     this.country = country;
+   }
+
+   public void setState(String state) {
+     this.state = state;
+   }
 
     @Override
     public boolean equals(Object o) {

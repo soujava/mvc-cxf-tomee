@@ -22,15 +22,14 @@ limitations under the License.
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
           name="viewport" content="width=device-width, initial-scale=1">
-    <title>MVC 1.0 DEMO</title>
-    <link href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-          type="text/css"/>
+    <title>Jakarta MVC 1.0 DEMO</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 <div class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="${mvc.basePath}/home">MVC 1.0 DEMO</a>
+            <a class="navbar-brand" href="${mvc.basePath}/home">Jakarta MVC 1.0 DEMO</a>
         </div>
         <div>
             <ul class="nav navbar-nav">
@@ -39,10 +38,10 @@ limitations under the License.
         </div>
     </div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/bootstrap/js/jquery.min.js">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js">
 </script>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/bootstrap/js/bootstrap.min.js">
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

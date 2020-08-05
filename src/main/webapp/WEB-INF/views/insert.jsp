@@ -23,7 +23,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MVC 1.0 DEMO</title>
+<link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" />
+<title>Jakarta MVC 1.0 DEMO</title>
 </head>
 <body>
 

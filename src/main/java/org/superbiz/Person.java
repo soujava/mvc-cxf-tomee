@@ -16,11 +16,7 @@
  */
 package org.superbiz;
 
-import jakarta.nosql.mapping.Column;
-import jakarta.nosql.mapping.Convert;
-import jakarta.nosql.mapping.Entity;
-import jakarta.nosql.mapping.Id;
-
+import java.util.Objects;
 import javax.mvc.binding.MvcBinding;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -29,7 +25,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
-import java.util.Objects;
+import jakarta.nosql.mapping.Column;
+import jakarta.nosql.mapping.Convert;
+import jakarta.nosql.mapping.Entity;
+import jakarta.nosql.mapping.Id;
 
 @Entity
 public class Person {
@@ -92,6 +91,26 @@ public class Person {
 
     public String getDescription() {
         return description;
+    }
+
+    public void setAge(int age) {
+      this.age = age;
+    }
+
+    public void setDescription(String description) {
+      this.description = description;
+    }
+
+    public void setName(String name) {
+      this.name = name;
+    }
+
+    public void setAddress(Address address) {
+      this.address = address;
+    }
+
+    public void setServer(String server) {
+      this.server = server;
     }
 
     @Override

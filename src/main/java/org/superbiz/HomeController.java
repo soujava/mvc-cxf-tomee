@@ -26,7 +26,6 @@ import javax.ws.rs.Path;
 public class HomeController {
 
     @GET
-    @View("home.jsp")
-    public void homePage() {
-    }
+    @View("home")
+    public void homePage(){}
 }

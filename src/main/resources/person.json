@@ -1,0 +1,32 @@
+[
+  {
+    "address":{
+      "country":"Brazil",
+      "state":"RJ"
+    },
+    "age":29,
+    "description":"Tomee with Jakarta MVC is very good, avoid using Spring MVC &#128512; .",
+    "name":"Daniel Dias",
+    "server":"TomEE"
+  },
+  {
+    "address":{
+      "country":"Brazil",
+      "state":"SP"
+    },
+    "age":30,
+    "description":"Wildfly with Jakarta MVC is very good, avoid using Spring MVC &#128512; .",
+    "name":"Daniel",
+    "server":"Wildfly"
+  },
+  {
+    "address":{
+      "country":"Brazil",
+      "state":"SP"
+    },
+    "age":19,
+    "description":"Payara with Jakarta MVC is very good, avoid using Spring MVC &#128512; .",
+    "name":"Daniel",
+    "server":"Payara"
+  }
+]
