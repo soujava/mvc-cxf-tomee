@@ -40,13 +40,7 @@ public class Bootstrap {
                                                            .getGenericSuperclass());
 
             personList.forEach(person -> {
-                Person p = new Person();
-                p.setAge(person.getAge());
-                p.setName(person.getName());
-                p.setAddress(person.getAddress());
-                p.setDescription(person.getDescription());
-                p.setServer(person.getServer());
-
+                Person p = person;
                 repository.save(p);
             });
         } catch (IOException e) {

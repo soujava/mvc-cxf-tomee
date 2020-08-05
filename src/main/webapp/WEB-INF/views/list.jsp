@@ -63,7 +63,7 @@
                             <td>${person.address.country}</td>
                             <td>${person.address.state}</td>
                             <td>${person.server}</td>
-                            <td>${person.description}</td> glyphicon glyphicon-edit
+                            <td>${person.description}</td>
                             <td>
                                 <a href="update/${person.id}" class="btn btn-info">
                                     <span class="glyphicon glyphicon-edit"></span>
